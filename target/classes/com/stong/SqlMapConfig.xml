@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--mybatis的主配置文件-->
+<configuration>
+    <!--配置mybatis的环境-->
+    <environments default="mysql">
+        <!--配置mysql的环境-->
+        <environment id="mysql">
+            <!--配置事务的类型-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置连接数据库的信息:用的数据源(连接池)-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///eesy_mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--告知mybatis映射配置文件的位置-->
+    <mappers>
+<!--        <mapper resource="com/stong/dao/IUserDao.xml"/>-->
+        <mapper class="com.stong.dao.IUserDao"/>
+    </mappers>
+</configuration>
